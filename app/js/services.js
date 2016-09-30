@@ -11,9 +11,6 @@ angular.module("myApp")
             return $http.get('/getMoviesList')
             
         },
-        sum: function(a,b){
-            return a + b;      
-        },
         multuply: function(a,b){
             
               return a * b;

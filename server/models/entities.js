@@ -14,9 +14,9 @@ var BlogSchema = new mongoose.Schema({
     });
     
 var MovieSchema = new mongoose.Schema({
-  title:  String,
+  Title:  String,
   Year: Date,
-  body:   String,
+  Body:   String,
   imdbID: String,
   Type: String,
   Poster: String

@@ -22,6 +22,24 @@ router.get('/getMoviesList', function(req, res, next) {
     })
 });
 
+router.post('/getMoviesList', function(req, res, next) {
+
+   var movie = new models.Movies();
+   movie.Title = req.body.Title;
+   movie.Type = req.body.Type;
+   movie.save(function(err){
+       if(err){
+           res.send(err)
+           } else {
+               
+               res.status(200).json("creado exitosamente");
+           }
+   })
+});
+
+
+
+
 router.get('/getBlogsList', function(req, res, next) {
 
     

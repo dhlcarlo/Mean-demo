@@ -1,7 +1,7 @@
 angular.module("myApp")
 
 
-.controller("bodyCtrl", ["$scope","$timeout","$interval","mainServices", function($scope, $timeout,$interval,mainServices){
+.controller("bodyCtrl", ["$scope","$timeout","$interval","mainServices","$http", function($scope, $timeout,$interval,mainServices,$http){
  
     $scope.movies = []
     console.log('loading movies')
@@ -12,10 +12,17 @@ angular.module("myApp")
     
     $scope.needToBeShowed = true;
     
-    $scope.name = ""
+    $scope.name = "";
     
-    $scope.sum = mainServices.sum;
-     $scope.multiply = mainServices.multuply;
+
+    
+  $scope.postdata = function() {
+  
+$http.post("/getMoviesList", {'Title': $scope.title, 'Type' : $scope.type}).success(function(data){
+       
+  })
+  
+  };
     
     $scope.time = new Date();
     

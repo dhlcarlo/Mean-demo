@@ -14,10 +14,19 @@
         <script src="bower_components/angular/angular.js"></script>
     </head>
     <body ng-controller="bodyCtrl">
+        
+        <form>
+        <input type="text" ng-model="title">
+        <input type="text" ng-model="type">
+        <button type="submit" ng-click="postdata()">Add</button>
+        
+        </form>
+        
+        
         <p> {{time | date:'HH-mm-ss:sss dd-MM-yy'}}</p>
         <h1>Hey Man! Its working, Right?</h1>
         <input type="text" ng-model="name">
-        <h1>{{multiply(5,5)}}</h1>
+       
         
         <button type="button" ng-click="needToBeShowed=!needToBeShowed">Show/Hide</button>
         <ul ng-repeat="vm in movies | filter:name" ng-show="needToBeShowed" >
@@ -25,7 +34,6 @@
             <li>{{vm.Year}}</li>
             <li>{{vm.imdbID}}</li>            
             <li>{{vm.Type}}</li>
-            <li>{{vm.Poster}}</li>
             <img ng-src="{{vm.Poster}}">
         </ul>
         
